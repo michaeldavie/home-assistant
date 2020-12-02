@@ -125,9 +125,11 @@ class ECSensor(CoordinatorEntity):
         """Return the units of measurement."""
         unit = self.coordinator.data[self.sensor_type].get("unit")
 
-        if unit == "C" or self.sensor_type in ["wind_chill", "humidex"]:
-            return TEMP_CELSIUS
-        return unit
+    async def update(self):
+        """Update current conditions."""
+        await self.ec_data.update()
+
+        self.ec_data.conditions.update(self.ec_data.alerts)
 
     @property
     def device_state_attributes(self):
