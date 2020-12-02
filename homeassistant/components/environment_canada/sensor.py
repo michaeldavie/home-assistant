@@ -62,6 +62,7 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
         lat = config.get(CONF_LATITUDE, hass.config.latitude)
         lon = config.get(CONF_LONGITUDE, hass.config.longitude)
         ec_data = ECWeather(coordinates=(lat, lon), language=config.get(CONF_LANGUAGE))
+        await ec_data.update()
 
     async def async_update_data():
         """Fetch data from Environment Canada."""
@@ -125,7 +126,7 @@ class ECSensor(CoordinatorEntity):
         """Return the units of measurement."""
         unit = self.coordinator.data[self.sensor_type].get("unit")
 
-    async def update(self):
+    async def async_update(self):
         """Update current conditions."""
         await self.ec_data.update()
 
