@@ -62,7 +62,6 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
         lat = config.get(CONF_LATITUDE, hass.config.latitude)
         lon = config.get(CONF_LONGITUDE, hass.config.longitude)
         ec_data = ECWeather(coordinates=(lat, lon), language=config.get(CONF_LANGUAGE))
-        await ec_data.update()
 
     async def async_update_data():
         """Fetch data from Environment Canada."""
