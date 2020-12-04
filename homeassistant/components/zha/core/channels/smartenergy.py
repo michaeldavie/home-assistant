@@ -1,7 +1,11 @@
 """Smart energy channels module for Zigbee Home Automation."""
+<<<<<<< refs/remotes/upstream/dev
 from __future__ import annotations
 
 from typing import Coroutine
+=======
+from typing import Coroutine, Union
+>>>>>>> Refactor ZHA core channel initialization (#43953)
 
 import zigpy.zcl.clusters.smartenergy as smartenergy
 

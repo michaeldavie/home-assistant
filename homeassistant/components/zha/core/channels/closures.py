@@ -56,6 +56,7 @@ class DoorLockChannel(ZigbeeChannel):
                 f"{self.unique_id}_{SIGNAL_ATTR_UPDATED}", attrid, attr_name, value
             )
 
+<<<<<<< refs/remotes/upstream/dev
     async def async_set_user_code(self, code_slot: int, user_code: str) -> None:
         """Set the user code for the code slot."""
 
@@ -103,6 +104,8 @@ class DoorLockChannel(ZigbeeChannel):
         result = await self.get_user_type(code_slot - 1)
         return result
 
+=======
+>>>>>>> Refactor ZHA core channel initialization (#43953)
 
 @registries.ZIGBEE_CHANNEL_REGISTRY.register(closures.Shade.cluster_id)
 class Shade(ZigbeeChannel):

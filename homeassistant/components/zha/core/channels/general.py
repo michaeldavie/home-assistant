@@ -2,7 +2,11 @@
 from __future__ import annotations
 
 import asyncio
+<<<<<<< refs/remotes/upstream/dev
 from typing import Any, Coroutine
+=======
+from typing import Any, Coroutine, List, Optional
+>>>>>>> Refactor ZHA core channel initialization (#43953)
 
 import zigpy.exceptions
 import zigpy.zcl.clusters.general as general
@@ -22,7 +26,10 @@ from ..const import (
     SIGNAL_SET_LEVEL,
     SIGNAL_UPDATE_DEVICE,
 )
+<<<<<<< refs/remotes/upstream/dev
 from ..helpers import retryable_req
+=======
+>>>>>>> Refactor ZHA core channel initialization (#43953)
 from .base import ClientChannel, ZigbeeChannel, parse_and_log_command
 
 
