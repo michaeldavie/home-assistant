@@ -1,5 +1,6 @@
 {
     "config": {
+<<<<<<< refs/remotes/upstream/dev
         "abort": {
             "already_configured_device": "Apparat ass scho konfigur\u00e9iert",
             "already_in_progress": "Konfiguratioun's Oflaf ass schon am gaang",
@@ -55,6 +56,9 @@
                 "description": "Allgemeng Apparat Astellungen konfigur\u00e9ieren"
             }
         }
+=======
+        "flow_title": "Apple TV: {name}"
+>>>>>>> [ci skip] Translation update
     },
     "title": "Apple TV"
 }

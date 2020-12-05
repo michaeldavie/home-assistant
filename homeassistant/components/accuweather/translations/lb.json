@@ -34,8 +34,12 @@
     },
     "system_health": {
         "info": {
+<<<<<<< refs/remotes/upstream/dev
             "can_reach_server": "AccuWeather Server ereechbar",
             "remaining_requests": "Rescht vun erlaabten Ufroen"
+=======
+            "can_reach_server": "AccuWeather Server ereechbar"
+>>>>>>> [ci skip] Translation update
         }
     }
 }

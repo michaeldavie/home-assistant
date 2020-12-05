@@ -7,8 +7,12 @@
             "auth_new_token_not_work_error": "Autenticazione utilizzando il token appena creato non riuscita",
             "auth_required_error": "Impossibile determinare se \u00e8 necessaria l'autorizzazione",
             "cannot_connect": "Impossibile connettersi",
+<<<<<<< refs/remotes/upstream/dev
             "no_id": "L'istanza Hyperion Ambilight non ha segnalato il suo ID",
             "reauth_successful": "La nuova autenticazione \u00e8 stata eseguita correttamente"
+=======
+            "no_id": "L'istanza Hyperion Ambilight non ha segnalato il suo ID"
+>>>>>>> [ci skip] Translation update
         },
         "error": {
             "cannot_connect": "Impossibile connettersi",
@@ -45,7 +49,10 @@
         "step": {
             "init": {
                 "data": {
+<<<<<<< refs/remotes/upstream/dev
                     "effect_show_list": "Effetti di Hyperion da mostrare",
+=======
+>>>>>>> [ci skip] Translation update
                     "priority": "Priorit\u00e0 Hyperion da usare per colori ed effetti"
                 }
             }

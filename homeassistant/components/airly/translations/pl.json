@@ -22,9 +22,13 @@
     },
     "system_health": {
         "info": {
+<<<<<<< refs/remotes/upstream/dev
             "can_reach_server": "Dost\u0119p do serwera Airly",
             "requests_per_day": "Dozwolone dzienne \u017c\u0105dania",
             "requests_remaining": "Pozosta\u0142o dozwolonych \u017c\u0105da\u0144"
+=======
+            "can_reach_server": "Dost\u0119p do serwera Airly"
+>>>>>>> [ci skip] Translation update
         }
     }
 }

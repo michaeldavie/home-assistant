@@ -22,9 +22,13 @@
     },
     "system_health": {
         "info": {
+<<<<<<< refs/remotes/upstream/dev
             "can_reach_server": "Raggiungi il server Airly",
             "requests_per_day": "Richieste consentite al giorno",
             "requests_remaining": "Richieste consentite rimanenti"
+=======
+            "can_reach_server": "Raggiungi il server Airly"
+>>>>>>> [ci skip] Translation update
         }
     }
 }

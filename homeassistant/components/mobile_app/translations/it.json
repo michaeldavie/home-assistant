@@ -13,6 +13,10 @@
         "action_type": {
             "notify": "Invia una notifica"
         }
+<<<<<<< refs/remotes/upstream/dev
     },
     "title": "App per dispositivi mobili"
+=======
+    }
+>>>>>>> [ci skip] Translation update
 }

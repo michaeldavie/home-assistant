@@ -16,9 +16,12 @@
             "hassio_confirm": {
                 "title": "Nastaven\u00ed integrace OpenZWave s dopl\u0148kem OpenZWave"
             },
+<<<<<<< refs/remotes/upstream/dev
             "install_addon": {
                 "title": "Instalace dopl\u0148ku OpenZWave byla zah\u00e1jena."
             },
+=======
+>>>>>>> [ci skip] Translation update
             "on_supervisor": {
                 "data": {
                     "use_addon": "Pou\u017e\u00edt dopln\u011bk OpenZWave pro Supervisor"
