@@ -117,6 +117,13 @@ SENSOR_TYPES = {
         ATTR_UNIT: None,
         ATTR_ICON: "mdi:weather-partly-snowy-rainy"
     },
+    "text_summary": {
+        ATTR_DEVICE_CLASS: None,
+        ATTR_EN_LABEL: "Forecast",
+        ATTR_FR_LABEL: "Prévision",
+        ATTR_UNIT: None,
+        ATTR_ICON: "mdi:weather-partly-snowy-rainy"
+    },
     "wind_speed": {
         ATTR_DEVICE_CLASS: None,
         ATTR_EN_LABEL: "Wind Speed",
