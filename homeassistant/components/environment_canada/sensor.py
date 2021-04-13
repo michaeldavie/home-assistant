@@ -14,7 +14,6 @@ from homeassistant.const import (
     ATTR_TIME,
     CONF_LATITUDE,
     CONF_LONGITUDE,
-    TEMP_CELSIUS,
 )
 import homeassistant.helpers.config_validation as cv
 from homeassistant.helpers.update_coordinator import (
@@ -22,7 +21,12 @@ from homeassistant.helpers.update_coordinator import (
     DataUpdateCoordinator,
 )
 
-from .const import ATTRIBUTION
+from .const import (
+    ATTRIBUTION,
+    ATTR_ICON,
+    ATTR_UNIT,
+    SENSOR_TYPES
+)
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -83,7 +87,7 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
     await coordinator.async_refresh()
 
     async_add_entities(
-        ECSensor(coordinator, sensor_type, ec_data.metadata)
+        ECSensor(coordinator, sensor_type, ec_data.language, ec_data.metadata)
         for sensor_type in coordinator.data
     )
 
@@ -91,10 +95,11 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
 class ECSensor(CoordinatorEntity):
     """Implementation of an Environment Canada sensor."""
 
-    def __init__(self, coordinator, sensor_type, metadata):
+    def __init__(self, coordinator, sensor_type, language, metadata):
         """Initialize the sensor."""
         super().__init__(coordinator)
         self.sensor_type = sensor_type
+        self.language = language
         self.metadata = metadata
 
     @property
@@ -105,7 +110,12 @@ class ECSensor(CoordinatorEntity):
     @property
     def name(self):
         """Return the name of the sensor."""
-        return self.coordinator.data[self.sensor_type].get("label")
+        return SENSOR_TYPES[self.sensor_type][self.language]
+
+    @property
+    def icon(self):
+        """Return the icon."""
+        return SENSOR_TYPES[self.sensor_type][ATTR_ICON]
 
     @property
     def state(self):
@@ -124,7 +134,7 @@ class ECSensor(CoordinatorEntity):
     @property
     def unit_of_measurement(self):
         """Return the units of measurement."""
-        unit = self.coordinator.data[self.sensor_type].get("unit")
+        return SENSOR_TYPES[self.sensor_type][ATTR_UNIT]
 
     async def async_update(self):
         """Update current conditions."""
