@@ -14,7 +14,7 @@ from homeassistant.const import (
 import homeassistant.helpers.config_validation as cv
 from homeassistant.util import Throttle
 
-from const import ATTRIBUTION
+from .const import ATTRIBUTION
 
 ATTR_UPDATED = "updated"
 
