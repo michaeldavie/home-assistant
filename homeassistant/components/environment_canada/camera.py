@@ -14,9 +14,10 @@ from homeassistant.const import (
 import homeassistant.helpers.config_validation as cv
 from homeassistant.util import Throttle
 
+from const import ATTRIBUTION
+
 ATTR_UPDATED = "updated"
 
-CONF_ATTRIBUTION = "Data provided by Environment Canada"
 CONF_STATION = "station"
 CONF_LOOP = "loop"
 CONF_PRECIP_TYPE = "precip_type"
@@ -83,7 +84,7 @@ class ECCamera(Camera):
     @property
     def extra_state_attributes(self):
         """Return the state attributes of the device."""
-        return {ATTR_ATTRIBUTION: CONF_ATTRIBUTION, ATTR_UPDATED: self.timestamp}
+        return {ATTR_ATTRIBUTION: ATTRIBUTION, ATTR_UPDATED: self.timestamp}
 
     @Throttle(MIN_TIME_BETWEEN_UPDATES)
     async def async_update(self):

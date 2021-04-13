@@ -22,12 +22,13 @@ from homeassistant.helpers.update_coordinator import (
     DataUpdateCoordinator,
 )
 
+from .const import ATTRIBUTION
+
 _LOGGER = logging.getLogger(__name__)
 
 ATTR_UPDATED = "updated"
 ATTR_STATION = "station"
 
-CONF_ATTRIBUTION = "Data provided by Environment Canada"
 CONF_STATION = "station"
 CONF_LANGUAGE = "language"
 
@@ -135,7 +136,7 @@ class ECSensor(CoordinatorEntity):
     def device_state_attributes(self):
         """Return the state attributes of the device."""
         attributes = {
-            ATTR_ATTRIBUTION: CONF_ATTRIBUTION,
+            ATTR_ATTRIBUTION: ATTRIBUTION,
             ATTR_LOCATION: self.metadata.get("location"),
             ATTR_STATION: self.metadata.get("station"),
         }
