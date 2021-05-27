@@ -4,5 +4,5 @@
   "documentation": "https://www.home-assistant.io/integrations/environment_canada",
   "requirements": ["env_canada==0.3.2"],
   "codeowners": ["@michaeldavie"],
-  "version": "2021-05-0"
+  "version": "2021.05.0"
 }
