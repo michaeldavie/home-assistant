@@ -215,7 +215,9 @@ AQHI_SENSOR = ECSensorEntityDescription(
     device_class=SensorDeviceClass.AQI,
     native_unit_of_measurement="AQI",
     state_class=SensorStateClass.MEASUREMENT,
-    value_fn=lambda data: data.current,
+    value_fn=lambda data: data.current
+    if data.current
+    else list(data.forecasts["hourly"].values())[0],
 )
 
 ALERT_TYPES: tuple[ECSensorEntityDescription, ...] = (
@@ -267,7 +269,7 @@ async def async_setup_entry(
     sensors: list[ECBaseSensor] = [ECSensor(coordinator, desc) for desc in SENSOR_TYPES]
     sensors.extend([ECAlertSensor(coordinator, desc) for desc in ALERT_TYPES])
     aqhi_coordinator = hass.data[DOMAIN][config_entry.entry_id]["aqhi_coordinator"]
-    sensors.append(ECSensor(aqhi_coordinator, AQHI_SENSOR, False))
+    sensors.append(ECSensor(aqhi_coordinator, AQHI_SENSOR))
     async_add_entities(sensors)
 
 
